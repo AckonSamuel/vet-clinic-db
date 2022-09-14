@@ -1,4 +1,4 @@
-# curriculum-databases-projects-template
+# VET CLINIC
 
 > Build a relational database about animals.
 
