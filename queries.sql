@@ -21,7 +21,7 @@ BEGIN;
 
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 
-UPDATE animals SET species = 'pokemon' WHERE species != 'pokemon';
+UPDATE animals SET species = 'pokemon' WHERE name NOT LIKE '%mon';
 
 COMMIT;
 
