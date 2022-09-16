@@ -26,3 +26,13 @@ UPDATE animals SET species = 'pokemon' WHERE species != 'pokemon';
 COMMIT;
 
 SELECT * FROM animals;
+
+-- third transaction
+BEGIN;
+
+DELETE FROM animals;
+
+ROLLBACK;
+
+SELECT * FROM animals;
+
