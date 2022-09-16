@@ -44,7 +44,8 @@ UPDATE animals
         WHERE 
             species.name = 'Digimon'
         )
-    WHERE animals.name LIKE '%mon';
+    WHERE 
+       animals.name LIKE '%mon';
 
 UPDATE animals
     SET 
@@ -56,7 +57,8 @@ UPDATE animals
             WHERE 
                 species.name = 'Pokemon'
         )
-    WHERE animals.name NOT LIKE '%mon';
+    WHERE 
+       animals.name NOT LIKE '%mon';
     
 UPDATE animals 
     SET 
@@ -68,7 +70,8 @@ UPDATE animals
             WHERE 
                 owners.full_name = 'Sam Smith'
         )
-    WHERE animals.name = 'Agumon';
+    WHERE 
+       animals.name = 'Agumon';
 
 UPDATE animals
     SET 
@@ -80,7 +83,9 @@ UPDATE animals
             WHERE 
                 owners.full_name = 'Jennifer Orwell'
         )
-    WHERE animals.name = 'Gabumon' OR animals.name = 'Pikachu';
+    WHERE 
+        animals.name = 'Gabumon' 
+    OR  animals.name = 'Pikachu';
 
  UPDATE animals
     SET 
@@ -92,7 +97,9 @@ UPDATE animals
             WHERE 
                 owners.full_name = 'Bob'
         )
-    WHERE animals.name = 'Devimon' OR animals.name = 'Plantmon';
+    WHERE 
+        animals.name = 'Devimon' 
+    OR  animals.name = 'Plantmon';
 
  UPDATE animals
     SET 
@@ -119,4 +126,6 @@ UPDATE animals
             WHERE 
                 owners.full_name = 'Dean Winchester'
         )
-    WHERE animals.name = 'Angemon' OR animals.name = 'Boarmon';
+    WHERE 
+        animals.name = 'Angemon' 
+    OR  animals.name = 'Boarmon';
