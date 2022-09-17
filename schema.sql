@@ -37,3 +37,9 @@ data(# date_of_graduation       DATE,
 data(# PRIMARY KEY(id)
 data(# );
 
+data=# CREATE TABLE specializations(
+data(# vet_id INT REFERENCES vets (id) ON UPDATE CASCADE ON DELETE CASCADE,
+data(# species_id INT REFERENCES species (id) ON UPDATE CASCADE,
+data(# CONSTRAINT pkey
+data(# PRIMARY KEY(vet_id, species_id) -- explicit pk
+data(# );
