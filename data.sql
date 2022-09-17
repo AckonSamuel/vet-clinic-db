@@ -136,3 +136,10 @@ data-# ('William Tatcher', 45, '2000-04-03'),
 data-# ('Maisy Smith', 26, '2019-01-17'),
 data-# ('Stephanie Mendez', 64, '1981-05-04'),
 data-# ('Jack Harkness', 38, '2008-06-08');
+
+data=# INSERT INTO specializations(vet_id, species_id)
+data-# VALUES
+data-# (1,1),
+data-# (3,1),
+data-# (3,2),
+data-# (4,2);
