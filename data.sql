@@ -130,4 +130,9 @@ UPDATE animals
         animals.name = 'Angemon' 
     OR  animals.name = 'Boarmon';
 
-    
+data=# INSERT INTO vets(name, age, date_of_graduation)
+data-# VALUES
+data-# ('William Tatcher', 45, '2000-04-03'),
+data-# ('Maisy Smith', 26, '2019-01-17'),
+data-# ('Stephanie Mendez', 64, '1981-05-04'),
+data-# ('Jack Harkness', 38, '2008-06-08');
