@@ -29,17 +29,24 @@ ALTER TABLE animals DROP species;
 ALTER TABLE animals ADD species_id INT REFERENCES species(id);
 ALTER TABLE animals ADD  owner_id  INT REFERENCES owners(id);
 
-data=# CREATE TABLE vets(
-data(# id               INT GENERATED ALWAYS AS IDENTITY,
-data(# name             VARCHAR(100),
-data(# age              INT,
-data(# date_of_graduation       DATE,
-data(# PRIMARY KEY(id)
-data(# );
+           CREATE TABLE vets(
+           id               INT GENERATED ALWAYS AS IDENTITY,
+           name             VARCHAR(100),
+           age              INT,
+           date_of_graduation       DATE,
+           PRIMARY KEY(id)
+           );
 
-data=# CREATE TABLE specializations(
-data(# vet_id INT REFERENCES vets (id) ON UPDATE CASCADE ON DELETE CASCADE,
-data(# species_id INT REFERENCES species (id) ON UPDATE CASCADE,
-data(# CONSTRAINT pkey
-data(# PRIMARY KEY(vet_id, species_id) -- explicit pk
-data(# );
+           CREATE TABLE specializations(
+           vet_id INT REFERENCES vets (id) ON UPDATE CASCADE ON DELETE CASCADE,
+           species_id INT REFERENCES species (id) ON UPDATE CASCADE,
+           CONSTRAINT pkey
+           PRIMARY KEY(vet_id, species_id) -- explicit pk
+           );
+
+           CREATE TABLE visits(
+           vet_id INT REFERENCES vets (id) ON UPDATE CASCADE ON DELETE CASCADE,
+           animals_id INT REFERENCES animals (id) ON UPDATE CASCADE,
+           CONSTRAINT pOkey
+           PRIMARY KEY(vet_id, animals_id) -- explicit pk
+           );
