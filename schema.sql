@@ -46,7 +46,8 @@ ALTER TABLE animals ADD  owner_id  INT REFERENCES owners(id);
 
            CREATE TABLE visits(
            vet_id INT REFERENCES vets (id) ON UPDATE CASCADE ON DELETE CASCADE,
-           animals_id INT REFERENCES animals (id) ON UPDATE CASCADE,
+           animal_id INT REFERENCES animals (id) ON UPDATE CASCADE,
+           date_of_visit DATE NOT NULL,
            CONSTRAINT pOkey
-           PRIMARY KEY(vet_id, animals_id) -- explicit pk
+           PRIMARY KEY(vet_id, animals_id, date_of_visit) -- explicit pk
            );
