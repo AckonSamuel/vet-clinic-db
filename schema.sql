@@ -28,3 +28,26 @@ CREATE TABLE species (
 ALTER TABLE animals DROP species;
 ALTER TABLE animals ADD species_id INT REFERENCES species(id);
 ALTER TABLE animals ADD  owner_id  INT REFERENCES owners(id);
+
+           CREATE TABLE vets(
+           id               INT GENERATED ALWAYS AS IDENTITY,
+           name             VARCHAR(100),
+           age              INT,
+           date_of_graduation       DATE,
+           PRIMARY KEY(id)
+           );
+
+           CREATE TABLE specializations(
+           vet_id INT REFERENCES vets (id) ON UPDATE CASCADE ON DELETE CASCADE,
+           species_id INT REFERENCES species (id) ON UPDATE CASCADE,
+           CONSTRAINT pkey
+           PRIMARY KEY(vet_id, species_id) -- explicit pk
+           );
+
+           CREATE TABLE visits(
+           vet_id INT REFERENCES vets (id) ON UPDATE CASCADE ON DELETE CASCADE,
+           animal_id INT REFERENCES animals (id) ON UPDATE CASCADE,
+           date_of_visit DATE NOT NULL,
+           CONSTRAINT pOkey
+           PRIMARY KEY(vet_id, animals_id, date_of_visit) -- explicit pk
+           );
